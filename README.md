@@ -15,13 +15,16 @@ The IPA is completely unsigned: no certificate, no provisioning profile, no UDID
 
 ## How to use
 
-1. Open `BuildBoxMac.xcodeproj` in Xcode
-2. Select your development team in Signing & Capabilities
-3. Build and run (⌘R)
-4. In the app: select your iOS project folder (or drag it in)
-5. Pick a scheme
-6. Hit **Build Unsigned IPA**
-7. Find your `.ipa` on the Desktop
+1. Download the `.dmg` from [Releases](https://github.com/mikevillarroel/buildbox-mac/releases).
+2. Open it and drag **BuildBox Mac** to Applications.
+3. In the app: select your iOS project folder (or drag it in).
+4. Pick a scheme.
+5. Hit **Build Unsigned IPA**.
+6. Find your `.ipa` on the Desktop.
+
+## For developers
+
+Source code is in this repo. Open `BuildBoxMac.xcodeproj` in Xcode to build it yourself.
 
 ## Features
 
