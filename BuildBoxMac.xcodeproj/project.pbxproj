@@ -1,0 +1,62 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+/* Begin PBXBuildFile section */
+		4FABF41738B37FC027747FE7 /* BuildBoxMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740358F92545C3B7EC8D3620 /* BuildBoxMacApp.swift */; };
+		3D4A0FEB16060150BBD7C1F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EA6C23764010A85F906C4D /* ContentView.swift */; };
+		2D0AAAAB4A0F07991884B935 /* IPABuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6701CC7C34A5E67B6E0B9A4D /* IPABuilder.swift */; };
+		C64A1FCC7B5FC7B91346AF52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09D35DD9231DE3C6ECBDE36 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		740358F92545C3B7EC8D3620 /* BuildBoxMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildBoxMacApp.swift; sourceTree = "<group>"; };
+		A3EA6C23764010A85F906C4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6701CC7C34A5E67B6E0B9A4D /* IPABuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPABuilder.swift; sourceTree = "<group>"; };
+		C09D35DD9231DE3C6ECBDE36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7718A476B44CF020FB230BA7 /* BuildBoxMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuildBoxMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		059DB2086B49B680F85B3555 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B731CEFC6751AAE0EC69B98 = {isa = PBXGroup; children = (20F4BD606C0F6D1645AE4919 /* BuildBoxMac */, 0A2C978E52A76F0AA9F68BB5 /* Products */); sourceTree = "<group>"; };
+		20F4BD606C0F6D1645AE4919 /* BuildBoxMac */ = {isa = PBXGroup; children = (740358F92545C3B7EC8D3620 /* BuildBoxMacApp.swift */, A3EA6C23764010A85F906C4D /* ContentView.swift */, 6701CC7C34A5E67B6E0B9A4D /* IPABuilder.swift */, C09D35DD9231DE3C6ECBDE36 /* Assets.xcassets */); path = BuildBoxMac; sourceTree = "<group>"; };
+		0A2C978E52A76F0AA9F68BB5 /* Products */ = {isa = PBXGroup; children = (7718A476B44CF020FB230BA7 /* BuildBoxMac.app */); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42AEFBAE01D2DFD981F7DA7D /* BuildBoxMac */ = {isa = PBXNativeTarget; buildConfigurationList = 99F672905A62B88AA25B5E95; buildPhases = (059DB2086B49B680F85B3555, FCA229C23F166EBB0BA5029E, B9C6EB6F79FC54535ACB3053); buildRules = (); dependencies = (); name = BuildBoxMac; productName = BuildBoxMac; productReference = 7718A476B44CF020FB230BA7; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46F86FAA6BBF9AC94A7E4595 = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1;}; buildConfigurationList = 4465C0EB90661DA0C0399108; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base); mainGroup = 2B731CEFC6751AAE0EC69B98; productRefGroup = 0A2C978E52A76F0AA9F68BB5; projectDirPath = ""; projectRoot = ""; targets = (42AEFBAE01D2DFD981F7DA7D); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B9C6EB6F79FC54535ACB3053 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (C64A1FCC7B5FC7B91346AF52); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCA229C23F166EBB0BA5029E = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (4FABF41738B37FC027747FE7, 3D4A0FEB16060150BBD7C1F9, 2D0AAAAB4A0F07991884B935); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1309015250E3B91A1768C480 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "BuildBox Mac"; MACOSX_DEPLOYMENT_TARGET = 13.0; PRODUCT_BUNDLE_IDENTIFIER = com.mikevillarroel.buildboxmac; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = macosx; SWIFT_VERSION = 5.0;}; name = Debug; };
+		7F1D4F052F77010B3189BD5A /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "BuildBox Mac"; MACOSX_DEPLOYMENT_TARGET = 13.0; PRODUCT_BUNDLE_IDENTIFIER = com.mikevillarroel.buildboxmac; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = macosx; SWIFT_VERSION = 5.0;}; name = Release; };
+		6BEB8A8372AEC5D15F55F5B8 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = macosx;}; name = Debug; };
+		76148309EB47067EAA7148E7 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = macosx;}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99F672905A62B88AA25B5E95 = {isa = XCConfigurationList; buildConfigurations = (1309015250E3B91A1768C480, 7F1D4F052F77010B3189BD5A); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		4465C0EB90661DA0C0399108 = {isa = XCConfigurationList; buildConfigurations = (6BEB8A8372AEC5D15F55F5B8, 76148309EB47067EAA7148E7); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 46F86FAA6BBF9AC94A7E4595;
+}
