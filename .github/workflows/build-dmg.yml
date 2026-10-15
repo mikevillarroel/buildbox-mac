@@ -1,0 +1,35 @@
+name: Build DMG
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Build app
+        run: |
+          xcodebuild -project BuildBoxMac.xcodeproj \
+            -scheme BuildBoxMac \
+            -configuration Release \
+            -derivedDataPath build \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+      
+      - name: Create DMG
+        run: |
+          mkdir -p dmg
+          cp -R "build/Build/Products/Release/BuildBoxMac.app" dmg/
+          hdiutil create -volname "BuildBox Mac" \
+            -srcfolder dmg \
+            -ov -format UDZO \
+            "BuildBoxMac-${{ github.ref_name }}.dmg"
+      
+      - name: Upload DMG to release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "BuildBoxMac-${{ github.ref_name }}.dmg"
