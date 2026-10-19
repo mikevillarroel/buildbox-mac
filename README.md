@@ -2,10 +2,6 @@
 
 Build unsigned IPAs from your Xcode projects with one click. No terminal commands needed.
 
-<p align="center">
-  <img src="screenshot.png" width="700" alt="BuildBox Mac Screenshot">
-</p>
-
 ## What it does
 
 Pick your iOS Xcode project folder, select a scheme, hit **Build Unsigned IPA** — and get a ready-to-sign `.ipa` on your Desktop.
@@ -40,7 +36,7 @@ Source code is in this repo. Open `BuildBoxMac.xcodeproj` in Xcode to build it y
 
 ## Developer
 
-**Miguel Villarroel** — [X](https://x.com/GOT_MUNCH1ES) · [Instagram](https://instagram.com/mikevillarroel)
+**Miguel Villarroel** — [X](https://x.com/MikeBuildsApp) · [Instagram](https://instagram.com/mikevillarroel)
 
 Collaborator: **MikeBorg**
 

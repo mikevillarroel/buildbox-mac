@@ -15,7 +15,7 @@ struct ContentView: View {
                     .font(.title2)
                     .fontWeight(.bold)
                 Spacer()
-                Text("v1.0.0")
+                Text("v1.0.2")
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .padding(.horizontal, 8)
@@ -39,7 +39,7 @@ struct ContentView: View {
                                     Text(url.deletingPathExtension().lastPathComponent)
                                         .foregroundColor(.primary)
                                 } else {
-                                    Text("Select project folder or drag it here…")
+                                    Text("Select project folder, .xcodeproj, or .zip — or drag it here…")
                                         .foregroundColor(.secondary)
                                 }
                                 Spacer()
@@ -64,7 +64,7 @@ struct ContentView: View {
                             }
                             return false
                         }
-                        Text("Pick the folder containing the .xcodeproj, or drag it here")
+                        Text("Pick the folder containing the .xcodeproj, the .xcodeproj itself, or a .zip — or drag it here")
                             .font(.caption2)
                             .foregroundColor(.secondary)
                     }
@@ -108,16 +108,54 @@ struct ContentView: View {
                     .buttonStyle(.plain)
                     .disabled(!builder.canBuild || builder.isBuilding)
                     
+                    if builder.projectURL != nil || !builder.logOutput.isEmpty {
+                        Button(action: {
+                            builder.clear()
+                        }) {
+                            HStack {
+                                Spacer()
+                                Image(systemName: "trash.fill")
+                                Text("Clear")
+                                Spacer()
+                            }
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding(.vertical, 12)
+                            .background(Color.red)
+                            .cornerRadius(10)
+                        }
+                        .buttonStyle(.plain)
+                        .disabled(builder.isBuilding)
+                    }
+                    
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("BUILD LOG")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                        HStack {
+                            Text("BUILD LOG")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Spacer()
+                            Button(action: {
+                                let pasteboard = NSPasteboard.general
+                                pasteboard.clearContents()
+                                pasteboard.setString(builder.logOutput, forType: .string)
+                            }) {
+                                HStack(spacing: 4) {
+                                    Image(systemName: "doc.on.doc")
+                                    Text("Copy")
+                                }
+                                .font(.caption)
+                                .foregroundColor(.blue)
+                            }
+                            .buttonStyle(.plain)
+                            .disabled(builder.logOutput.isEmpty)
+                        }
                         ScrollView {
                             Text(builder.logOutput)
                                 .font(.system(.body, design: .monospaced))
                                 .font(.caption)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(8)
+                                .textSelection(.enabled)
                         }
                         .frame(height: 140)
                         .background(Color(NSColor.textBackgroundColor))
@@ -211,7 +249,7 @@ struct ContentView: View {
                                         .foregroundColor(.secondary)
                                 }
                                 Spacer()
-                                Link(destination: URL(string: "https://x.com/GOT_MUNCH1ES")!) {
+                                Link(destination: URL(string: "https://x.com/MikeBuildsApp")!) {
                                     Image(systemName: "xmark")
                                         .font(.caption)
                                         .fontWeight(.bold)
@@ -290,9 +328,9 @@ struct ContentView: View {
             
             Spacer()
         }
-        .fileImporter(
+                        .fileImporter(
             isPresented: $showingProjectPicker,
-            allowedContentTypes: [.folder],
+            allowedContentTypes: [.folder, .zip],
             allowsMultipleSelection: false
         ) { result in
             if case .success(let urls) = result, let url = urls.first {
